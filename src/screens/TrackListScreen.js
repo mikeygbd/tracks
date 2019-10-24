@@ -3,12 +3,15 @@ import {
   View,
   Text,
   StyleSheet,
+  Button
 } from 'react-native';
 
-const TrackListScreen = ({}) => (
-  <View style={styles.container}>
+const TrackListScreen = ({ navigation }) => (
+  <>
     <Text style={{fontSize: 48}}>I'm TrackListScreen</Text>
-  </View>
+    <Button title="Go to TrackDetail" onPress={() => navigation.navigate('TrackDetail')} />
+
+  </>
 );
 
 export default TrackListScreen;
