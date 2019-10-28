@@ -8,7 +8,8 @@ import { Text, Input, Button } from 'react-native-elements'
 import Spacer from '../components/Spacer';
 
 const SignupScreen = ({ navigation }) => {
-  return <>
+  return (
+  <>
     <Spacer>
       <Text h3>Sign Up for Tracker</Text>
     </Spacer>
@@ -24,11 +25,15 @@ const SignupScreen = ({ navigation }) => {
     <Spacer>
       <Button title="Go to mainFlow" onPress={() => navigation.navigate('mainFlow')} />
     </Spacer>
-
-
-
   </>
+  )
 }
+
+SignupScreen.navigationOptions = {
+  header: null
+}
+
+
 export default SignupScreen;
 
 const styles = StyleSheet.create({
