@@ -8,42 +8,22 @@ import {
 import { Text, Input, Button } from 'react-native-elements'
 import Spacer from '../components/Spacer';
 import { Context as AuthContext } from '../context/AuthContext'
+import AuthForm from '../components/AuthForm'
 
 const SignupScreen = ({ navigation }) => {
   const { state, signup } = useContext(AuthContext)
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
 
   return (
   <View style={styles.container}>
+    <AuthForm
+      headerText="Sign Up fro Tracker"
+      errorMessage={state.errorMessage}
+      submitButtonText="Sign Up"
+      onSubmit={signup}
+    />
     <Spacer>
-      <Text h3>Sign Up for Tracker</Text>
-    </Spacer>
-      <Input
-      label="Email"
-      value={email}
-      onChangeText={setEmail}
-      autoCapitalize="none"
-      autoCorrect={false}
-      />
-    <Spacer />
-      <Input
-      secureTextEntry
-      label="Password"
-      value={password}
-      onChangeText={setPassword}
-      autoCapitalize="none"
-      autoCorrect={false}
-       />
-       {state.errorMessage ? (
-         <Text style={styles.errorMessage}>{state.errorMessage}</Text>
-       ): null }
-    <Spacer>
-      <Button title="Sign Up" onPress={() => signup({ email, password })} />
-    </Spacer>
-    <Spacer>
-      <Text>Already have an account?</Text><TouchableOpacity onPress={() => navigation.navigate('Signin')}>
-      <Text style={styles.link}>Sign in</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Signin')}>
+      <Text style={styles.link}>Already have an account? Sign in instead.</Text>
       </TouchableOpacity>
     </Spacer>
   </View>
@@ -62,12 +42,6 @@ const styles = StyleSheet.create({
     marginBottom: 250,
     justifyContent: 'center',
     flex: 1,
-  },
-  errorMessage: {
-    marginLeft: 15,
-    marginTop: 15,
-    fontSize: 16,
-    color: 'red'
   },
   link: {
     color: 'blue',
