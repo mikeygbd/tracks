@@ -20,7 +20,7 @@ const SignupScreen = ({ navigation }) => {
     />
     <NavLink
     routeName="Signin"
-    text="Already have an account? sign in instead."
+    text="Already have an account? Sign in instead."
     />
   </View>
   )
@@ -35,9 +35,8 @@ export default SignupScreen;
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 250,
-    justifyContent: 'center',
     flex: 1,
+    marginTop: 120,
   },
 
 });
