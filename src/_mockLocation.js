@@ -1,4 +1,4 @@
-import * as Location from 'ecpo-location'
+import * as Location from 'expo-location'
 
 const tenMetersWithDegrees = 0.0001
 
