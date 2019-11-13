@@ -6,7 +6,7 @@ import Map from '../components/Map'
 import { Text } from 'react-native-elements'
 import { SafeAreaView } from 'react-navigation'
 import { requestPermissionsAsync } from 'expo-location'
-
+import '../_mockLocation'
 
 const TrackCreateScreen = ({}) => {
 
@@ -15,6 +15,7 @@ const TrackCreateScreen = ({}) => {
   const startWatching = async () => {
     try {
       await requestPermissionsAsync()
+
     } catch (e) {
       setErr(e)
     }
