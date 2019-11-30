@@ -22,7 +22,6 @@ export default (shouldTrack, callback) => {
         setErr(e)
       }
     }
-
     if (shouldTrack) {
       startWatching()
     } else {
@@ -31,7 +30,6 @@ export default (shouldTrack, callback) => {
     }
       subscriber = null
     }
-
     return () => {
       if (subscriber) {
         subscriber.remove()
